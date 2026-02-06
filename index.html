@@ -1,73 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crowd-FM</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #222;
-      text-align: center;
-    }
-    header {
-      background: #222;
-      color: white;
-      padding: 2rem 1rem;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    p {
-      font-size: 1.2rem;
-    }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.2s ease;
-    }
-    a.button:hover {
-      background: #0056b3;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="CrowdFM: Learned Optimal Selection of Conditional Flow Matching Trajectories for Crowd Navigation">
+  <meta name="keywords" content="path planning, optimisation, machine learning, generative ai, robotics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CrowdFM: Learned Optimal Selection of Conditional Flow Matching Trajectories for Crowd Navigation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
 </head>
+
 <body>
-  <header>
-    <h1>🚀 Crowd-FM</h1>
-    <p>Learned Optimal Selection of Conditional Flow Matching Trajectories for Crowd Navigation</p>
-  </header>
 
-  <main>
-    <h2>Welcome!</h2>
-    <p>This project focuses on learning-based crowd navigation using Conditional Flow Matching. 
-    Check out the code, results, and documentation below.</p>
-    <a href="https://github.com/crowd-fm" class="button">View on GitHub</a>
-  </main>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://www.linkedin.com/in/laksh-nanwani/">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
 
-  <footer>
-    &copy; 2025 Crowd-FM | Powered by GitHub Pages
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://smart-wheelchair-rrc.github.io/CrowdSurfer-webpage/">CrowdSurfer</a>
+            <a class="navbar-item" href="https://smart-wheelchair-rrc.github.io/o3d-sim-webpage/">O3D-SIM</a>
+            <a class="navbar-item" href="https://smart-wheelchair-rrc.github.io/SI-maps-webpage/">SI Maps</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">CrowdFM: Learned Optimal Selection of Conditional Flow Matching
+              Trajectories for Crowd Navigation
+            </h1>
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/antareep-singha-10a0b5165/">Antareep
+                  Singha</a><sup>*2</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/laksh-nanwani/">Laksh Nanwani</a><sup>*1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/mathai-mathew-pulicken/">Mathai Mathew P.</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/samkit-j/">Samkit Jain</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.ptsingamaneni.com/">Phani Teja Singamaneni</a><sup>4</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.etis.ee/Portal/Persons/Display/7a6dc0d6-217b-4bcc-9b66-0d472c67b9bd?tabId=CV_ENG">Arun
+                  Kumar Singh</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://robotics.iiit.ac.in/faculty_mkrishna/">K. Madhava Krishna</a><sup>1</sup>
+              </span>
+            </div>
+
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>*</sup>equal contribution</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Robotics Research Center, IIIT Hyderabad, India;</span>
+              <span class="author-block"><sup>2</sup>Nanyang Technological University, Singapore;</span>
+              <span class="author-block"><sup>3</sup>University of Tartu, Estonia;</span>
+              <span class="author-block"><sup>4</sup>Inria, Universit´e de Lorraine, France;</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="CrowdFM.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/Smart-Wheelchair-RRC/crowd-fm"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><b>Note</b> - Accepted to IEEE
+                <a href="https://2026.ieee-icra.org" target="_blank">ICRA 2026</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="teaser.png" alt="Crowd-FM Teaser">
+        </img>
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">Crowd-FM Pipeline Overview</span>
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Safe and computationally efficient local planning for mobile robots in dense, unstructured human crowds
+              remains a fundamental challenge. Moreover, ensuring that robot trajectories are similar to how a human
+              moves will increase the acceptance of the robot in human environments. In this paper, we present Crowd-FM,
+              a learning-based approach to address both safety and human-likeness challenges. Our approach has two novel
+              components. First, we train a Conditional Flow-Matching (CFM) policy over a dataset of optimally
+              controlled trajectories to learn a set of collision-free primitives that a robot can choose at any given
+              scenario. The chosen optimal control solver can generate multi-modal collision-free trajectories, allowing
+              the CFM policy to learn a diverse set of maneuvers. Secondly, we learn a score function over a dataset of
+              human demonstration trajectories that provides a human-likeness score for the flow primitives. At
+              inference time, computing the optimal trajectory requires selecting the one with the highest score. Our
+              approach improves the state-of-the-art by showing that our CFM policy alone can produce collision-free
+              navigation with a higher success rate than existing learning-based baselines. Furthermore, when augmented
+              with inference-time refinement, our approach can outperform even expensive optimisation-based planning
+              approaches. Finally, we validate that our scoring network can select trajectories closer to the expert
+              data than a manually designed cost function.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+  </section>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              It borrows the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this
+              website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
+
 </body>
+
 </html>
